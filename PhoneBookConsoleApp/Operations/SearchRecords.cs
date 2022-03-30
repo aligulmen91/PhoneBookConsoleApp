@@ -18,7 +18,7 @@ namespace PhoneBookConsoleApp.Operations
             Desicion desicion = 0;
             string nameToFind;
             string numberToFind;
-
+            Console.WriteLine("");
             Console.WriteLine("Arama yapmak istediğiniz tipi seçiniz.");
             Console.WriteLine("**********************************************");
             Console.WriteLine("İsim veya soyisime göre arama yapmak için: (1)");
@@ -28,18 +28,20 @@ namespace PhoneBookConsoleApp.Operations
             switch (desicion)
             {
                 case Desicion.WithNameOrSurname:
+                    Console.WriteLine("");
                     Console.WriteLine("Lütfen aramak istediğiniz kişinin adını ya da soyadını giriniz:");
                     nameToFind = Console.ReadLine().Trim().ToLower();
                     PeopleFound = listToSearch.Where(p => p.Name.ToLower() == nameToFind || p.Surname.ToLower() == nameToFind).ToList();
                     break;
                 case Desicion.WithNumber:
+                    Console.WriteLine("");
                     Console.WriteLine("Lütfen aramak istediğiniz kişinin adını ya da soyadını giriniz:");
                     numberToFind = Console.ReadLine().Trim();
                     PeopleFound = listToSearch.Where(p => p.PhoneNumber == numberToFind).ToList();
                     break;
                 default: Console.WriteLine("Hatalı Seçim!");  break;
             }
-
+            Console.WriteLine("");
             Console.WriteLine("Arama Sonuçlarınız");
             Console.WriteLine("**********************************************");
             foreach (var item in PeopleFound)

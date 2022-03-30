@@ -16,7 +16,7 @@ namespace PhoneBookConsoleApp.Operations
             Person PersonToUpdate = new();
             Person PersonExist = new();
             string nameToFind;
-
+            Console.WriteLine("");
             Console.WriteLine("Lütfen numarasını güncellemek istediğiniz kişinin adını ya da soyadını giriniz:");
             nameToFind = Console.ReadLine().Trim().ToLower();
 
@@ -24,6 +24,7 @@ namespace PhoneBookConsoleApp.Operations
             if (PersonToUpdate is null)
             {
                 Desicion desicion = 0;
+                Console.WriteLine("");
                 Console.WriteLine("Aradığınız krtiterlere uygun veri rehberde bulunamadı. Lütfen bir seçim yapınız.");
                 Console.WriteLine("* Güncellemeyi sonlandırmak için : (1)");
                 Console.WriteLine("* Yeniden denemek için      : (2)");
@@ -40,7 +41,8 @@ namespace PhoneBookConsoleApp.Operations
 
             else
             {
-                PersonExist = PersonToUpdate;  
+                PersonExist = PersonToUpdate;
+                Console.WriteLine("");
                 Console.WriteLine("Lütfen isim giriniz             :");
                 Console.WriteLine("Güncel İsim : {0}",PersonToUpdate.Name);
                 PersonToUpdate.Name = Console.ReadLine();

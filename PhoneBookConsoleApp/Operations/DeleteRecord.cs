@@ -17,7 +17,7 @@ namespace PhoneBookConsoleApp.Operations
         {
             Person PersonToDelete = new();
             string nameToFind;
-            
+            Console.WriteLine("");
             Console.WriteLine("Lütfen numarasını silmek istediğiniz kişinin adını ya da soyadını giriniz:");
             nameToFind = Console.ReadLine().Trim().ToLower();
 
@@ -25,6 +25,7 @@ namespace PhoneBookConsoleApp.Operations
             if (PersonToDelete is null)
             {
                 Desicion desicion = 0;
+                Console.WriteLine("");
                 Console.WriteLine("Aradığınız krtiterlere uygun veri rehberde bulunamadı. Lütfen bir seçim yapınız.");
                 Console.WriteLine("* Silmeyi sonlandırmak için : (1)");
                 Console.WriteLine("* Yeniden denemek için      : (2)");
@@ -39,6 +40,7 @@ namespace PhoneBookConsoleApp.Operations
             }
             else
             {
+                Console.WriteLine("");
                 Console.WriteLine("{0} isimli kişi rehberden silinmek üzere, onaylıyor musunuz ?(y/n)", PersonToDelete.Name);
                 char confirmation = Console.ReadLine()[0];
 
