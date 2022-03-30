@@ -28,12 +28,13 @@ namespace PhoneBookConsoleApp.Operations
                 Console.WriteLine("Aradığınız krtiterlere uygun veri rehberde bulunamadı. Lütfen bir seçim yapınız.");
                 Console.WriteLine("* Silmeyi sonlandırmak için : (1)");
                 Console.WriteLine("* Yeniden denemek için      : (2)");
-                desicion = (Desicion)Byte.Parse(Console.ReadLine());
+                desicion = (Desicion)TryParseIfPossible.FromStringToByte(Console.ReadLine());
 
                 switch (desicion)
                 {
                     case Desicion.End: MainMenu.Show(); break;
                     case Desicion.Retry: listToDeleteFrom.DeleteSelectedRecords(); break;
+                    default: Console.WriteLine("Hatalı Seçim!"); MainMenu.Show(); break;
                 }
             }
             else
@@ -45,6 +46,8 @@ namespace PhoneBookConsoleApp.Operations
                 {
                     case 'y': listToDeleteFrom.Remove(PersonToDelete); MainMenu.Show(); break;
                     case 'n': listToDeleteFrom.DeleteSelectedRecords(); break;
+                    default: Console.WriteLine("Hatalı Seçim!"); MainMenu.Show(); break;
+
                 }
             }
 

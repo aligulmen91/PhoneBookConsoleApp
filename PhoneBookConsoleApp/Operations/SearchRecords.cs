@@ -23,7 +23,7 @@ namespace PhoneBookConsoleApp.Operations
             Console.WriteLine("**********************************************");
             Console.WriteLine("İsim veya soyisime göre arama yapmak için: (1)");
             Console.WriteLine("Telefon numarasına göre arama yapmak için: (2)");
-            desicion = (Desicion)Byte.Parse(Console.ReadLine());
+            desicion = (Desicion)TryParseIfPossible.FromStringToByte(Console.ReadLine());
 
             switch (desicion)
             {
@@ -37,6 +37,7 @@ namespace PhoneBookConsoleApp.Operations
                     numberToFind = Console.ReadLine().Trim();
                     PeopleFound = listToSearch.Where(p => p.PhoneNumber == numberToFind).ToList();
                     break;
+                default: Console.WriteLine("Hatalı Seçim!"); MainMenu.Show(); break;
             }
 
             Console.WriteLine("Arama Sonuçlarınız");

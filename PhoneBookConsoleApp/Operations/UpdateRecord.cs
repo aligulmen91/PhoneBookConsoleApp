@@ -27,12 +27,14 @@ namespace PhoneBookConsoleApp.Operations
                 Console.WriteLine("Aradığınız krtiterlere uygun veri rehberde bulunamadı. Lütfen bir seçim yapınız.");
                 Console.WriteLine("* Güncellemeyi sonlandırmak için : (1)");
                 Console.WriteLine("* Yeniden denemek için      : (2)");
-                desicion = (Desicion)Byte.Parse(Console.ReadLine());
+                desicion = (Desicion)TryParseIfPossible.FromStringToByte(Console.ReadLine());
 
                 switch (desicion)
                 {
                     case Desicion.End: MainMenu.Show(); break;
                     case Desicion.Retry: listToUpdate.UpdateExistingRecord(); break;
+                    default: Console.WriteLine("Hatalı Seçim!"); MainMenu.Show(); break;
+
                 }
             }
 
