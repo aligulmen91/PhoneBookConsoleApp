@@ -15,11 +15,7 @@ namespace PhoneBookConsoleApp
             while (selectedOperation != Operation.Exit)
             {
                 MainMenu.Show();
-                selectedOperation = (Operation)Convert.ToByte(Console.ReadLine());
-
-               
-
-                
+                selectedOperation = (Operation)TryParseIfPossible.FromStringToByte(Console.ReadLine());
                 switch (selectedOperation)
                 {
                     case Operation.Add: Phonebook.AddNewRecord(); break;
@@ -30,11 +26,7 @@ namespace PhoneBookConsoleApp
                     case Operation.Exit: Console.WriteLine("Çıkış Yapılıyor"); break;
                     default: Console.WriteLine("hatalı seçim!"); break;
                 }
-
-
-
-
-               
+             
             }
 
 
