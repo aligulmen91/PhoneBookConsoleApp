@@ -31,9 +31,9 @@ namespace PhoneBookConsoleApp.Operations
 
                 switch (desicion)
                 {
-                    case Desicion.End: MainMenu.Show(); break;
+                    case Desicion.End:  break;
                     case Desicion.Retry: listToUpdate.UpdateExistingRecord(); break;
-                    default: Console.WriteLine("Hatalı Seçim!"); MainMenu.Show(); break;
+                    default: Console.WriteLine("Hatalı Seçim!");  break;
 
                 }
             }

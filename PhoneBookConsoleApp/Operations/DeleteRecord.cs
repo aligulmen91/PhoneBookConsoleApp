@@ -32,9 +32,9 @@ namespace PhoneBookConsoleApp.Operations
 
                 switch (desicion)
                 {
-                    case Desicion.End: MainMenu.Show(); break;
+                    case Desicion.End:  break;
                     case Desicion.Retry: listToDeleteFrom.DeleteSelectedRecords(); break;
-                    default: Console.WriteLine("Hatalı Seçim!"); MainMenu.Show(); break;
+                    default: Console.WriteLine("Hatalı Seçim!");  break;
                 }
             }
             else
@@ -44,9 +44,9 @@ namespace PhoneBookConsoleApp.Operations
 
                 switch (confirmation)
                 {
-                    case 'y': listToDeleteFrom.Remove(PersonToDelete); MainMenu.Show(); break;
+                    case 'y': listToDeleteFrom.Remove(PersonToDelete);  break;
                     case 'n': listToDeleteFrom.DeleteSelectedRecords(); break;
-                    default: Console.WriteLine("Hatalı Seçim!"); MainMenu.Show(); break;
+                    default: Console.WriteLine("Hatalı Seçim!");  break;
 
                 }
             }

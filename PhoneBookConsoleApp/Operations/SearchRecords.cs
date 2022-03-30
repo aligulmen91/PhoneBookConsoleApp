@@ -37,7 +37,7 @@ namespace PhoneBookConsoleApp.Operations
                     numberToFind = Console.ReadLine().Trim();
                     PeopleFound = listToSearch.Where(p => p.PhoneNumber == numberToFind).ToList();
                     break;
-                default: Console.WriteLine("Hatalı Seçim!"); MainMenu.Show(); break;
+                default: Console.WriteLine("Hatalı Seçim!");  break;
             }
 
             Console.WriteLine("Arama Sonuçlarınız");
